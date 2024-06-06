@@ -2,7 +2,17 @@ body
 {
     margin: 0;
 }
-
+#badge
+{
+    position: absolute;
+    background-color: rgb(255, 30, 30);
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 14px;
+    top: 33px;
+    right:110px;
+}
 #container
 {
     background-color: white;
@@ -61,6 +71,12 @@ body
     min-width: 25px;
     text-align: center;
     position: absolute;
+}
+
+.addedToCart
+{
+    font-size: 1.5em;
+    margin-right: 25px;
 }
 
 #input 

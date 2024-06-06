@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${categoria.imagem}" alt="${categoria.categoria}">
                         <h3>${categoria.categoria}</h3>
                         <p>${categoria.descricao}</p>
-                        <button onclick="acessCata()">Acessar Categoria</button>
+                        <button>Acessar Categoria</button>
                     </div>
                 `;
                 categorias.innerHTML += categoriasHTML;
@@ -19,6 +19,3 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Erro ao carregar categorias:', error));
 });
 
-function acessCata(){
-    window.location.href = "catalogo.html";
-}
