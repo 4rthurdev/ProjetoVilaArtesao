@@ -10,12 +10,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${categoria.imagem}" alt="${categoria.categoria}">
                         <h3>${categoria.categoria}</h3>
                         <p>${categoria.descricao}</p>
-                        <button>Acessar Categoria</button>
+                        <button class="acessar-categoria">Acessar Categoria</button>
                     </div>
                 `;
                 categorias.innerHTML += categoriasHTML;
             });
-        })
-        .catch(error => console.error('Erro ao carregar categorias:', error));
-});
 
+            // Evento de clique para acessar a categoria
+            document.querySelectorAll('.acessar-categoria').forEach(button => {
+                button.addEventListener('click', function() {
+                    window.location.href = 'catalogo.html';
+                });
+            });
+        })
+        .catch(error => console.error('Erro ao carregar catálogo:', error));
+});

@@ -1,4 +1,4 @@
-/* Estilizando o contêiner do carrinho */
+/* Contêiner do carrinho */
 #cart {
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilizando os itens do carrinho */
+/* Itens do carrinho */
 .carrinho-item {
     display: flex;
     align-items: center;
@@ -37,7 +37,7 @@
     margin: 0 16px;
 }
 
-/* Estilizando o botão de remover */
+/* Botão de remover */
 .remover-item {
     padding: 8px 16px;
     border: none;
@@ -51,7 +51,7 @@
     background-color: #e53935;
 }
 
-/* Estilizando o rodapé do carrinho */
+/* Rodapé do carrinho */
 #cart-footer {
     width: 100%;
     display: flex;
@@ -60,7 +60,7 @@
     margin-top: 16px;
 }
 
-/* Estilizando os botões de limpar carrinho e finalizar compra */
+/* Botões de limpar carrinho e finalizar compra */
 #clear-cart, #checkout {
     padding: 10px 20px;
     border: none;

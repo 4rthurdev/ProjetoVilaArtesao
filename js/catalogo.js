@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('produtos.json') // Caminho para o arquivo JSON
+    fetch('produtos.json') // Caminho JSON
         .then(response => response.json())
         .then(produtos => {
             const catalogo = document.getElementById('catalogo');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 catalogo.innerHTML += produtoHTML;
             }
         
-            // Adicionar evento de clique aos botões de adicionar ao carrinho
+            // Evento de clique de adicionar ao carrinho
             document.querySelectorAll('.adicionar-carrinho').forEach(button => {
                 button.addEventListener('click', function(event) {
                     const productDiv = event.target.closest('.product');
@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     carregarCarrinho();
 
-    // Adiciona evento de clique ao botão de limpar carrinho
+    // Evento de clique para o botão de limpar carrinho
     document.getElementById('clear-cart').addEventListener('click', limparCarrinho);
 
-    // Adiciona evento de clique ao botão de finalizar compra
+    // Evento de clique para o botão de finalizar compra
     document.getElementById('checkout').addEventListener('click', finalizarCompra);
 });
 
@@ -73,7 +73,7 @@ function carregarCarrinho() {
     const cartItems = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
 
-    cartItems.innerHTML = ''; // Limpa o conteúdo anterior
+    cartItems.innerHTML = ''; // Limpa o conteúdo
 
     if (carrinho.length === 0) {
         cartItems.innerHTML = '<p>O carrinho está vazio.</p>';
@@ -99,7 +99,7 @@ function carregarCarrinho() {
 
         cartTotal.textContent = total.toFixed(2).replace('.', ',');
 
-        // Adicionar evento de clique aos botões de remover item
+        // Adiciona evento de remover item
         document.querySelectorAll('.remover-item').forEach(button => {
             button.addEventListener('click', function(event) {
                 const itemIndex = event.target.closest('.carrinho-item').dataset.index;
@@ -109,18 +109,19 @@ function carregarCarrinho() {
     }
 }
 
+// Remove item do carrinho
 function removerItemDoCarrinho(index) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinho.splice(index, 1);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     carregarCarrinho();
 }
-
+// Limpa o carrinho
 function limparCarrinho() {
     localStorage.removeItem('carrinho');
     carregarCarrinho();
 }
-
+// Finaliza a compra
 function finalizarCompra() {
     alert('Compra finalizada!');
     limparCarrinho();
